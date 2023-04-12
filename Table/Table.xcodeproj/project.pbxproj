@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C02FB9829E65E0E004A14FC /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02FB9729E65E0E004A14FC /* MyTableViewCell.swift */; };
 		4CFD41FE29DD16F500755EBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD41FD29DD16F500755EBA /* AppDelegate.swift */; };
 		4CFD420029DD16F500755EBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD41FF29DD16F500755EBA /* SceneDelegate.swift */; };
 		4CFD420229DD16F500755EBA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD420129DD16F500755EBA /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C02FB9729E65E0E004A14FC /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		4CFD41FA29DD16F500755EBA /* Table.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Table.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFD41FD29DD16F500755EBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CFD41FF29DD16F500755EBA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				4CFD41FD29DD16F500755EBA /* AppDelegate.swift */,
 				4CFD41FF29DD16F500755EBA /* SceneDelegate.swift */,
 				4CFD420129DD16F500755EBA /* ViewController.swift */,
+				4C02FB9729E65E0E004A14FC /* MyTableViewCell.swift */,
 				4CFD420329DD16F500755EBA /* Main.storyboard */,
 				4CFD420629DD16F600755EBA /* Assets.xcassets */,
 				4CFD420829DD16F600755EBA /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CFD420229DD16F500755EBA /* ViewController.swift in Sources */,
+				4C02FB9829E65E0E004A14FC /* MyTableViewCell.swift in Sources */,
 				4CFD41FE29DD16F500755EBA /* AppDelegate.swift in Sources */,
 				4CFD420029DD16F500755EBA /* SceneDelegate.swift in Sources */,
 			);
