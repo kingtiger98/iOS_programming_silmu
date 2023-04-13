@@ -36,7 +36,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return UITableViewCell()
         }
         cell.myLabel.text = "재하"
-        
         return cell
     }
 }
