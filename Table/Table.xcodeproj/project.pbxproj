@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C001C1329ED35B8006F0948 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C001C1229ED35B8006F0948 /* SecondViewController.swift */; };
 		4C02FB9829E65E0E004A14FC /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C02FB9729E65E0E004A14FC /* MyTableViewCell.swift */; };
 		4CFD41FE29DD16F500755EBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD41FD29DD16F500755EBA /* AppDelegate.swift */; };
 		4CFD420029DD16F500755EBA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CFD41FF29DD16F500755EBA /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C001C1229ED35B8006F0948 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4C02FB9729E65E0E004A14FC /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		4CFD41FA29DD16F500755EBA /* Table.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Table.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFD41FD29DD16F500755EBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		4CFD41F129DD16F500755EBA = {
 			isa = PBXGroup;
 			children = (
+				4C001C1229ED35B8006F0948 /* SecondViewController.swift */,
 				4CFD41FC29DD16F500755EBA /* Table */,
 				4CFD41FB29DD16F500755EBA /* Products */,
 			);
@@ -144,6 +147,7 @@
 				4CFD420229DD16F500755EBA /* ViewController.swift in Sources */,
 				4C02FB9829E65E0E004A14FC /* MyTableViewCell.swift in Sources */,
 				4CFD41FE29DD16F500755EBA /* AppDelegate.swift in Sources */,
+				4C001C1329ED35B8006F0948 /* SecondViewController.swift in Sources */,
 				4CFD420029DD16F500755EBA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
