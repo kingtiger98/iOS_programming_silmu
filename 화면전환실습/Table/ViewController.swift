@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? MyTableViewCell else {
             return UITableViewCell()
         }
-        cell.myLabel.text = "황재하"
+        cell.myLabel.text = "첫 번째 테이블"
         return cell
     }
 }
