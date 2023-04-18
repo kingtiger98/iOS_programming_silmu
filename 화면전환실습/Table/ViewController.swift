@@ -21,12 +21,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // 뷰 이동 소스 : present()
     @IBAction func presentBtn(_ sender: Any) {
         // 스토리보드 초기화
-        let SecondVC = storyboard?.instantiateViewController(identifier: "SecondVC")
+        let SecondVC1 = storyboard?.instantiateViewController(identifier: "SecondVC")
         // 트랜지션 방법 지정
-        SecondVC?.modalPresentationStyle = .automatic
+        SecondVC1?.modalPresentationStyle = .automatic
         // present사용!
-        present(SecondVC!, animated: true)
+        present(SecondVC1!, animated: true)
     }
+    
+    
+    // 뷰 이동 소스 : 네비게이션 컨트롤러
+    @IBAction func navigationBtn(_ sender: UIButton) {
+        // 스토리보드 초기화
+        guard let SecondVC2 = storyboard?.instantiateViewController(identifier: "SecondVC") else { return }
+        // 네비게이션 컨트롤러 사용
+        navigationController?.pushViewController(SecondVC2, animated: true)
+    }
+    
     
     
     
