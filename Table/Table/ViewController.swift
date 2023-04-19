@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let foods = ["1.김치찌개", "2.된장찌개", "3.떡볶이", "4.제육볶음", "5.돈가스"]
+    
     @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
@@ -28,16 +30,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         present(SecondVC!, animated: true)
     }
     
-    
-    
     // section 수
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     // section에서 row 수
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return foods.count
     }
     
     // cell 생성
@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as? MyTableViewCell else {
             return UITableViewCell()
         }
-        cell.myLabel.text = "황재하"
+        cell.myLabel.text = foods[indexPath.row]
         return cell
     }
 }

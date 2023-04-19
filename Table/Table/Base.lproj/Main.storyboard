@@ -27,19 +27,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rd-NN-Lvm">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Rd-NN-Lvm">
+                                                    <rect key="frame" x="20" y="15" width="353" height="61"/>
+                                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="353" id="F5e-rg-jH8"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemCyanColor"/>
                                             <constraints>
-                                                <constraint firstItem="5Rd-NN-Lvm" firstAttribute="centerY" secondItem="WCa-9g-ebO" secondAttribute="centerY" id="DKy-Ib-cVx"/>
-                                                <constraint firstItem="5Rd-NN-Lvm" firstAttribute="centerX" secondItem="WCa-9g-ebO" secondAttribute="centerX" id="NAt-fE-bCk"/>
-                                                <constraint firstItem="5Rd-NN-Lvm" firstAttribute="top" secondItem="WCa-9g-ebO" secondAttribute="topMargin" constant="-11" id="OfX-wS-LWm"/>
-                                                <constraint firstItem="5Rd-NN-Lvm" firstAttribute="leading" secondItem="WCa-9g-ebO" secondAttribute="leadingMargin" constant="-20" id="oCq-oK-Bdd"/>
+                                                <constraint firstItem="5Rd-NN-Lvm" firstAttribute="top" secondItem="WCa-9g-ebO" secondAttribute="topMargin" constant="7" id="WM7-yX-nC8"/>
+                                                <constraint firstItem="5Rd-NN-Lvm" firstAttribute="bottom" secondItem="WCa-9g-ebO" secondAttribute="bottomMargin" id="srG-Va-Q5Q"/>
+                                                <constraint firstItem="5Rd-NN-Lvm" firstAttribute="leading" secondItem="WCa-9g-ebO" secondAttribute="leadingMargin" id="xbE-WH-FV7"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -52,10 +55,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wxr-ed-SEW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gs0-1p-yL7"/>
-                            <constraint firstItem="wxr-ed-SEW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="JAG-Ar-C63"/>
-                            <constraint firstItem="wxr-ed-SEW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="L6B-2n-y4X"/>
-                            <constraint firstItem="wxr-ed-SEW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kBM-VJ-syc"/>
+                            <constraint firstItem="wxr-ed-SEW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="51" id="FO9-qv-ITd"/>
+                            <constraint firstItem="wxr-ed-SEW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="cVl-a3-n1u"/>
+                            <constraint firstItem="wxr-ed-SEW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nUp-Is-ewK"/>
+                            <constraint firstItem="wxr-ed-SEW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pz8-Jc-Q6I"/>
                         </constraints>
                     </view>
                     <connections>
@@ -64,7 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-860.30534351145036" y="-66.197183098591552"/>
+            <point key="canvasLocation" x="-1827" y="-54"/>
         </scene>
     </scenes>
     <resources>
