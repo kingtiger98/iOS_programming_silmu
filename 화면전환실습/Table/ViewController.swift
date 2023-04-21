@@ -39,6 +39,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
+    @IBAction func segueBtn(_ sender: UIButton) {
+        
+    }
+    
+    
+    
+    
     
     // section 수
     func numberOfSections(in tableView: UITableView) -> Int {
