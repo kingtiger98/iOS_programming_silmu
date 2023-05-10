@@ -18,7 +18,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ke1-jG-8EZ">
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
-                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" rowHeight="120" id="v1K-UO-dl9" customClass="MyTableViewCell" customModule="MovieHwangjh" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="393" height="120"/>
@@ -27,22 +27,35 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-MB-Pfk">
-                                                    <rect key="frame" x="23" y="25" width="350" height="70"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-MB-Pfk">
+                                                    <rect key="frame" x="23" y="11" width="136" height="98"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="136" id="Mfg-zO-7S1"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxP-9J-jdD">
+                                                    <rect key="frame" x="223" y="11" width="150" height="98"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             <constraints>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="centerY" secondItem="C9Y-0Y-YWb" secondAttribute="centerY" id="g7J-8Z-ERJ"/>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="top" secondItem="C9Y-0Y-YWb" secondAttribute="topMargin" constant="14" id="llW-6M-6Kd"/>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="leading" secondItem="C9Y-0Y-YWb" secondAttribute="leadingMargin" constant="3" id="w2B-HU-eOf"/>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="trailing" secondItem="C9Y-0Y-YWb" secondAttribute="trailingMargin" id="yvS-NP-I53"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="top" secondItem="C9Y-0Y-YWb" secondAttribute="topMargin" id="3dx-jv-cla"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="bottom" secondItem="yxP-9J-jdD" secondAttribute="bottom" id="85q-QT-NQy"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="top" secondItem="yxP-9J-jdD" secondAttribute="top" id="8Cz-tW-EbO"/>
+                                                <constraint firstItem="yxP-9J-jdD" firstAttribute="trailing" secondItem="C9Y-0Y-YWb" secondAttribute="trailingMargin" id="DcY-Uz-sj7"/>
+                                                <constraint firstItem="yxP-9J-jdD" firstAttribute="leading" secondItem="KcF-MB-Pfk" secondAttribute="trailing" constant="64" id="FN2-cf-K6b"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="leading" secondItem="C9Y-0Y-YWb" secondAttribute="leadingMargin" constant="3" id="UVT-1C-rTL"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="bottom" secondItem="C9Y-0Y-YWb" secondAttribute="bottomMargin" id="rPx-uD-ygN"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="audiAcc" destination="yxP-9J-jdD" id="5H5-ad-Hh1"/>
                                             <outlet property="movieName" destination="KcF-MB-Pfk" id="ucL-hs-Med"/>
                                         </connections>
                                     </tableViewCell>
@@ -68,9 +81,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
