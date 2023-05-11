@@ -55,14 +55,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     return
                 }
                 if let JSONdata = data {
-                    // JSONDecoder : JSON객체에서 데이터 타입의 인스턴스를 디코딩
+                    // JSONDecoder : JSON객체에서 데이터 타입의 인스턴스를 디코딩하는 객체 생성
                     let decorder = JSONDecoder()
                     // do~try~catch문으로 에러 핸들링
                     do {
                         let decodedData = try decorder.decode(MovieData.self, from: JSONdata)
-                        print(decodedData.boxOfficeResult.dailyBoxOfficeList[0].movieNm)
                         self.movieData = decodedData // tableView(_:cellForRowAt:)에서 decodeData를 사용하기 위해
-                        DispatchQueue.main.async {
+                        DispatchQueue.main.async { // UI관련 소스는 메인 스레드에서 처리하도록 해야함!
                             self.table.reloadData()
                         }
                     } catch {
@@ -75,8 +74,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return name.count
+        return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

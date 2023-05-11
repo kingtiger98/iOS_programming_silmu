@@ -28,16 +28,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-MB-Pfk">
-                                                    <rect key="frame" x="23" y="11" width="136" height="98"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="136" id="Mfg-zO-7S1"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="23" y="11" width="257" height="98"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxP-9J-jdD">
-                                                    <rect key="frame" x="223" y="11" width="150" height="98"/>
+                                                    <rect key="frame" x="298" y="11" width="84" height="98"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="84" id="jxW-7K-uY0"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -45,13 +45,13 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                             <constraints>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="top" secondItem="C9Y-0Y-YWb" secondAttribute="topMargin" id="3dx-jv-cla"/>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="bottom" secondItem="yxP-9J-jdD" secondAttribute="bottom" id="85q-QT-NQy"/>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="top" secondItem="yxP-9J-jdD" secondAttribute="top" id="8Cz-tW-EbO"/>
-                                                <constraint firstItem="yxP-9J-jdD" firstAttribute="trailing" secondItem="C9Y-0Y-YWb" secondAttribute="trailingMargin" id="DcY-Uz-sj7"/>
-                                                <constraint firstItem="yxP-9J-jdD" firstAttribute="leading" secondItem="KcF-MB-Pfk" secondAttribute="trailing" constant="64" id="FN2-cf-K6b"/>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="leading" secondItem="C9Y-0Y-YWb" secondAttribute="leadingMargin" constant="3" id="UVT-1C-rTL"/>
-                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="bottom" secondItem="C9Y-0Y-YWb" secondAttribute="bottomMargin" id="rPx-uD-ygN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="yxP-9J-jdD" secondAttribute="trailing" constant="-9" id="4aP-ZW-UCV"/>
+                                                <constraint firstItem="yxP-9J-jdD" firstAttribute="leading" secondItem="KcF-MB-Pfk" secondAttribute="trailing" constant="18" id="KPa-8X-ra3"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="top" secondItem="C9Y-0Y-YWb" secondAttribute="topMargin" id="Llu-cq-UMA"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="leading" secondItem="C9Y-0Y-YWb" secondAttribute="leadingMargin" constant="3" id="Pnb-hu-0dG"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="bottom" secondItem="C9Y-0Y-YWb" secondAttribute="bottomMargin" id="SLJ-AQ-Tjf"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="bottom" secondItem="yxP-9J-jdD" secondAttribute="bottom" id="d4t-KU-6lg"/>
+                                                <constraint firstItem="KcF-MB-Pfk" firstAttribute="top" secondItem="yxP-9J-jdD" secondAttribute="top" id="dPj-lH-Jfd"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -77,7 +77,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-219.08396946564883" y="10.563380281690142"/>
+            <point key="canvasLocation" x="-364" y="10"/>
         </scene>
     </scenes>
     <resources>
