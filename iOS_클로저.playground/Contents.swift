@@ -22,6 +22,7 @@ func math(x: Int, y:Int, cal:(Int, Int) -> Int) -> Int {
     return cal(x, y)
 }
 
+
 // 클로저
 result = math(x: 10, y: 20, cal: {(val1: Int, val2: Int) -> Int in
     return val1 + val2
@@ -35,7 +36,9 @@ result = math(x: 10, y: 20) {(val1: Int, val2: Int) -> Int in
 print(result)
 
 
-// 연습 도전
+
+
+// =================== 연습 도전
 func bb(){
     print("B")
 }
