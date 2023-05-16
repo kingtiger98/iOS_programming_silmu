@@ -48,8 +48,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // 네트워킹 2단계 : URLSession 만들기
             let session = URLSession(configuration: .default)
             // 네트워킹 3단계 : URLSession 인스턴스에게 task주기
-            // 네트워킹 4_1단계 : 3단계를 상수 task에 넣음
-            let task = session.dataTask(with: url) { data, response, error in
+            let task = session.dataTask(with: url) { data, response, error in   // 네트워킹 4_1단계 : 3단계를 상수 task에 넣음
                 if error != nil {
                     print(error!)
                     return
