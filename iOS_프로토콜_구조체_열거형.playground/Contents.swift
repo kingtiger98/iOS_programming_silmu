@@ -30,5 +30,9 @@ print(myInfo.shape.height)
 
 
 
+
+
+
+
 // 열거형
 
