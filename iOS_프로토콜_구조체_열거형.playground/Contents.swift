@@ -26,13 +26,5 @@ class Man2 {
 let myInfo = Man2()
 print(myInfo.shape.height)
   
-
-
-
-
-
-
-
-
 // 열거형
 
