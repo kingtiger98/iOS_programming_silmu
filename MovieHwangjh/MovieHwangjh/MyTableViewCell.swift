@@ -11,6 +11,8 @@ class MyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var movieName: UILabel!
     @IBOutlet weak var audiAcc: UILabel!
+    @IBOutlet weak var audiCnt: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

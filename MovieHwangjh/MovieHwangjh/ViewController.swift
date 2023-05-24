@@ -19,15 +19,12 @@ struct BoxOfficeResult: Codable {
 
 // MARK: - DailyBoxOfficeList
 struct DailyBoxOfficeList: Codable {
-    let movieNm, audiAcc: String
+    let movieNm, audiAcc, audiCnt: String
 }
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
-    
-    let name = ["슈퍼 마리오 브라더스", "드림", "존윅4", "스즈메의 문단속", "옥수역 귀신", "리바운드", "더 퍼스트 슬램덩크", "랜필드", "킬링 로맨스", "무명"]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,42 +36,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MovieData형 프로퍼티 만들어 decodedData 저장
     var movieData: MovieData? // tableView(_:cellForRowAt:)에서 decodeData를 사용하기 위해
-    let movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=e0d922798fe4b71963bb0052e9c4ad6b&targetDt=20230508"
+    var movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=e0d922798fe4b71963bb0052e9c4ad6b&targetDt="
     
-    // 네트워킹 함수 총 4단계
-//    func getData() {
-//        // 네트워킹 1단계 : URL 만들기
-//        if let url = URL(string: movieURL){ // 네트워크로 접속할 주소
-//            // 네트워킹 2단계 : URLSession 만들기
-//            let session = URLSession(configuration: .default)
-//            // 네트워킹 3단계 : URLSession 인스턴스에게 task주기, 네트워킹 4_1단계 : 3단계를 상수 task에 넣음
-//            let task = session.dataTask(with: url) { data, response, error in
-//                if error != nil {
-//                    print(error!)
-//                    return
-//                }
-//                if let JSONdata = data {
-//                    // JSONDecoder : JSON객체에서 데이터 타입의 인스턴스를 디코딩하는 객체 생성
-//                    let decorder = JSONDecoder()
-//                    // do~try~catch문으로 에러 핸들링
-//                    do {
-//                        let decodedData = try decorder.decode(MovieData.self, from: JSONdata)
-//                        self.movieData = decodedData // tableView(_:cellForRowAt:)에서 decodeData를 사용하기 위해
-//                        DispatchQueue.main.async { // UI관련 소스는 메인 스레드에서 처리하도록 해야함!
-//                            self.table.reloadData()
-//                        }
-//                    } catch {
-//                        print(error)
-//                    }
-//                }
-//            }
-//            // 네트워킹 4_2단계 : task를 resume()
-//            task.resume()
-//        }
-//    }
+    // 어제 날짜로 movieURL 자동 갱신
+    func updateMovieURLAndGetData() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) // 어제의 날짜 계산
+        let targetDate = dateFormatter.string(from: yesterday!)
+        movieURL += targetDate
+    }
     
     // guard문으로 적용
     func getData() {
+        updateMovieURLAndGetData() // movieURL에 어제 날짜 추가 함수 호출
         guard let url = URL(string: movieURL) else {
             print("Invalid URL") // 유효하지 않은 URL인 경우 에러 메시지 출력
             return
@@ -111,7 +86,58 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         task.resume() // 네트워크 작업 시작
     }
-
+    
+    // 네트워킹 함수 총 4단계
+    //    func getData() {
+    //        // 네트워킹 1단계 : URL 만들기
+    //        if let url = URL(string: movieURL){ // 네트워크로 접속할 주소
+    //            // 네트워킹 2단계 : URLSession 만들기
+    //            let session = URLSession(configuration: .default)
+    //            // 네트워킹 3단계 : URLSession 인스턴스에게 task주기, 네트워킹 4_1단계 : 3단계를 상수 task에 넣음
+    //            let task = session.dataTask(with: url) { data, response, error in
+    //                if error != nil {
+    //                    print(error!)
+    //                    return
+    //                }
+    //                if let JSONdata = data {
+    //                    // JSONDecoder : JSON객체에서 데이터 타입의 인스턴스를 디코딩하는 객체 생성
+    //                    let decorder = JSONDecoder()
+    //                    // do~try~catch문으로 에러 핸들링
+    //                    do {
+    //                        let decodedData = try decorder.decode(MovieData.self, from: JSONdata)
+    //                        self.movieData = decodedData // tableView(_:cellForRowAt:)에서 decodeData를 사용하기 위해
+    //                        DispatchQueue.main.async { // UI관련 소스는 메인 스레드에서 처리하도록 해야함!
+    //                            self.table.reloadData()
+    //                        }
+    //                    } catch {
+    //                        print(error)
+    //                    }
+    //                }
+    //            }
+    //            // 네트워킹 4_2단계 : task를 resume()
+    //            task.resume()
+    //        }
+    //    }
+    
+    // 숫자에 콤마 추가 기능 함수
+    func formatNumber(_ number: String) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.locale = Locale.current
+        formatter.groupingSeparator = ","
+        
+        guard let formattedNumber = formatter.number(from: number) else { return "nil" }
+        return formatter.string(from: formattedNumber) ?? "실패"
+    }
+    
+    // 테이블뷰 헤더
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMdd"
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date()) // 어제의 날짜 계산
+        let targetDate = dateFormatter.string(from: yesterday!)
+        return "박스오피스(영화진흥위원회재공 :" + targetDate + ")"
+    }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -120,10 +146,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MyTableViewCell
-        cell.movieName.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].movieNm
-        cell.audiAcc.text = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row].audiAcc
         
-        return cell
+        guard let movie = movieData?.boxOfficeResult.dailyBoxOfficeList[indexPath.row] else {
+            cell.movieName.text = ""
+            cell.audiAcc.text = ""
+            cell.audiCnt.text = ""
+            
+            return cell
+        }
+            cell.movieName.text = movie.movieNm
+            cell.audiAcc.text = "누적 : \(formatNumber(movie.audiAcc))"
+            cell.audiCnt.text = "어제 : \(formatNumber(movie.audiCnt))"
+        
+            return cell
     }
+    
 }
 
