@@ -42,36 +42,76 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let movieURL = "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=e0d922798fe4b71963bb0052e9c4ad6b&targetDt=20230508"
     
     // 네트워킹 함수 총 4단계
+//    func getData() {
+//        // 네트워킹 1단계 : URL 만들기
+//        if let url = URL(string: movieURL){ // 네트워크로 접속할 주소
+//            // 네트워킹 2단계 : URLSession 만들기
+//            let session = URLSession(configuration: .default)
+//            // 네트워킹 3단계 : URLSession 인스턴스에게 task주기, 네트워킹 4_1단계 : 3단계를 상수 task에 넣음
+//            let task = session.dataTask(with: url) { data, response, error in
+//                if error != nil {
+//                    print(error!)
+//                    return
+//                }
+//                if let JSONdata = data {
+//                    // JSONDecoder : JSON객체에서 데이터 타입의 인스턴스를 디코딩하는 객체 생성
+//                    let decorder = JSONDecoder()
+//                    // do~try~catch문으로 에러 핸들링
+//                    do {
+//                        let decodedData = try decorder.decode(MovieData.self, from: JSONdata)
+//                        self.movieData = decodedData // tableView(_:cellForRowAt:)에서 decodeData를 사용하기 위해
+//                        DispatchQueue.main.async { // UI관련 소스는 메인 스레드에서 처리하도록 해야함!
+//                            self.table.reloadData()
+//                        }
+//                    } catch {
+//                        print(error)
+//                    }
+//                }
+//            }
+//            // 네트워킹 4_2단계 : task를 resume()
+//            task.resume()
+//        }
+//    }
+    
+    // guard문으로 적용
     func getData() {
-        // 네트워킹 1단계 : URL 만들기
-        if let url = URL(string: movieURL){ // 네트워크로 접속할 주소
-            // 네트워킹 2단계 : URLSession 만들기
-            let session = URLSession(configuration: .default)
-            // 네트워킹 3단계 : URLSession 인스턴스에게 task주기
-            let task = session.dataTask(with: url) { data, response, error in   // 네트워킹 4_1단계 : 3단계를 상수 task에 넣음
-                if error != nil {
-                    print(error!)
-                    return
-                }
-                if let JSONdata = data {
-                    // JSONDecoder : JSON객체에서 데이터 타입의 인스턴스를 디코딩하는 객체 생성
-                    let decorder = JSONDecoder()
-                    // do~try~catch문으로 에러 핸들링
-                    do {
-                        let decodedData = try decorder.decode(MovieData.self, from: JSONdata)
-                        self.movieData = decodedData // tableView(_:cellForRowAt:)에서 decodeData를 사용하기 위해
-                        DispatchQueue.main.async { // UI관련 소스는 메인 스레드에서 처리하도록 해야함!
-                            self.table.reloadData()
-                        }
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
-            // 네트워킹 4_2단계 : task를 resume()
-            task.resume()
+        guard let url = URL(string: movieURL) else {
+            print("Invalid URL") // 유효하지 않은 URL인 경우 에러 메시지 출력
+            return
         }
+        
+        let session = URLSession(configuration: .default) // 기본 URLSession 구성
+        
+        let task = session.dataTask(with: url) { [weak self] data, response, error in
+            guard let self = self else { return } // 클로저 내에서 self를 사용하기 위해 강한 참조를 약한 참조로 변환
+            
+            if let error = error {
+                print(error) // 에러가 있는 경우 에러 메시지 출력
+                return
+            }
+            
+            guard let jsonData = data else {
+                print("No data received") // 데이터가 없는 경우 에러 메시지 출력
+                return
+            }
+            
+            let decoder = JSONDecoder() // JSON을 디코딩하기 위한 JSONDecoder 생성
+            
+            do {
+                let decodedData = try decoder.decode(MovieData.self, from: jsonData) // JSON 데이터 디코딩
+                self.movieData = decodedData // 디코딩된 데이터를 속성에 저장
+                
+                DispatchQueue.main.async {
+                    self.table.reloadData() // 메인 스레드에서 UI 업데이트를 수행하기 위해 reloadData() 호출
+                }
+            } catch {
+                print(error) // 디코딩 에러가 있는 경우 에러 메시지 출력
+            }
+        }
+        
+        task.resume() // 네트워크 작업 시작
     }
+
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
