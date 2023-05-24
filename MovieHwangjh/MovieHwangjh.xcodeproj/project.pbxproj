@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C157B352A1DBD7D00CEC12F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C157B342A1DBD7D00CEC12F /* DetailViewController.swift */; };
 		4C231B662A0209B7006C803D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C231B652A0209B7006C803D /* AppDelegate.swift */; };
 		4C231B682A0209B7006C803D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C231B672A0209B7006C803D /* SceneDelegate.swift */; };
 		4C231B6A2A0209B7006C803D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C231B692A0209B7006C803D /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C157B342A1DBD7D00CEC12F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4C231B622A0209B7006C803D /* MovieHwangjh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieHwangjh.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C231B652A0209B7006C803D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C231B672A0209B7006C803D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				4C231B672A0209B7006C803D /* SceneDelegate.swift */,
 				4C231B692A0209B7006C803D /* ViewController.swift */,
 				4C231B6B2A0209B7006C803D /* Main.storyboard */,
+				4C157B342A1DBD7D00CEC12F /* DetailViewController.swift */,
 				4C231B792A020AC9006C803D /* MyTableViewCell.swift */,
 				4C231B6E2A0209B8006C803D /* Assets.xcassets */,
 				4C231B702A0209B8006C803D /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				4C231B6A2A0209B7006C803D /* ViewController.swift in Sources */,
 				4C231B7A2A020AC9006C803D /* MyTableViewCell.swift in Sources */,
+				4C157B352A1DBD7D00CEC12F /* DetailViewController.swift in Sources */,
 				4C231B662A0209B7006C803D /* AppDelegate.swift in Sources */,
 				4C231B682A0209B7006C803D /* SceneDelegate.swift in Sources */,
 			);

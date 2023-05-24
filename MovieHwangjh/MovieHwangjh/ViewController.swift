@@ -161,5 +161,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
     }
     
+    // 다음 뷰에 데이터 전달 _ 주석달기 공부 해야대
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let dest = segue.destination as? DetailViewController else { return }
+        
+        guard let selectRow = table.indexPathForSelectedRow else { return }
+        
+        let row = selectRow.row
+        dest.movieName = (movieData?.boxOfficeResult.dailyBoxOfficeList[row].movieNm)!
+        
+    }
+    
 }
 
