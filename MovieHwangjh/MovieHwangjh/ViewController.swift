@@ -47,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         movieURL += targetDate
     }
     
-    // guard문으로 적용
+    // 네트워킹 _ guard문으로 적용
     func getData() {
         updateMovieURLAndGetData() // movieURL에 어제 날짜 추가 함수 호출
         guard let url = URL(string: movieURL) else {
@@ -119,7 +119,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //        }
     //    }
     
-    // 숫자에 콤마 추가 기능 함수
+    // String형 숫자에 콤마 추가 기능 함수
     func formatNumber(_ number: String) -> String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
@@ -161,10 +161,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return cell
     }
     
+    
+    
     // 다음 뷰에 데이터 전달 _ 주석달기 공부 해야대
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let dest = segue.destination as? DetailViewController else { return }
-        
         guard let selectRow = table.indexPathForSelectedRow else { return }
         
         let row = selectRow.row
