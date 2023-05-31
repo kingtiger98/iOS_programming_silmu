@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailViewController: UIViewController {
 
@@ -13,21 +14,23 @@ class DetailViewController: UIViewController {
     
     var movieName: String = ""
     
+    
+    @IBOutlet weak var webView: WKWebView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = movieName
-        // Do any additional setup after loading the view.
+        // nameLabel.text = movieName
+        navigationItem.title = movieName
+        
+        
+        // 네이버 검색창 + 자동으로 영화이름으로 검색까지
+        // let urlKorString = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+movieName
+        // let urlKorString = "https://namu.wiki/w/"+movieName
+         let urlKorString = "https://map.naver.com/v5/search/영화관"
+        let urlString = urlKorString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        guard let url = URL(string: urlString) else { return }
+        let request = URLRequest(url: url)
+        webView.load(request)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

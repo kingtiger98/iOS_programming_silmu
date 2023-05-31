@@ -27,7 +27,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-MB-Pfk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KcF-MB-Pfk">
                                                     <rect key="frame" x="9" y="11" width="235" height="98"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="235" id="GKX-ua-hSC"/>
@@ -102,25 +102,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czh-zC-8FH">
-                                <rect key="frame" x="81" y="157" width="231" height="83"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czh-zC-8FH">
+                                <rect key="frame" x="176" y="416" width="41.333333333333343" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fdp-3L-kU4">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YCx-lA-dPZ"/>
                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YCx-lA-dPZ" firstAttribute="bottom" secondItem="Czh-zC-8FH" secondAttribute="bottom" constant="578" id="FVv-Mm-poC"/>
-                            <constraint firstItem="Czh-zC-8FH" firstAttribute="leading" secondItem="YCx-lA-dPZ" secondAttribute="leading" constant="81" id="QaJ-ZF-DWu"/>
-                            <constraint firstItem="Czh-zC-8FH" firstAttribute="top" secondItem="YCx-lA-dPZ" secondAttribute="top" constant="54" id="Yhs-CD-Rct"/>
-                            <constraint firstItem="Czh-zC-8FH" firstAttribute="centerX" secondItem="Kgl-Jn-MIX" secondAttribute="centerX" id="jiz-2z-aME"/>
+                            <constraint firstItem="Czh-zC-8FH" firstAttribute="centerX" secondItem="Kgl-Jn-MIX" secondAttribute="centerX" id="DcH-Ww-p57"/>
+                            <constraint firstItem="YCx-lA-dPZ" firstAttribute="bottom" secondItem="fdp-3L-kU4" secondAttribute="bottom" id="Oe8-S1-SCP"/>
+                            <constraint firstItem="Czh-zC-8FH" firstAttribute="centerY" secondItem="Kgl-Jn-MIX" secondAttribute="centerY" id="bI0-lv-fcg"/>
+                            <constraint firstItem="fdp-3L-kU4" firstAttribute="leading" secondItem="YCx-lA-dPZ" secondAttribute="leading" id="emm-wE-Faz"/>
+                            <constraint firstItem="YCx-lA-dPZ" firstAttribute="trailing" secondItem="fdp-3L-kU4" secondAttribute="trailing" id="pv4-02-oHd"/>
+                            <constraint firstItem="fdp-3L-kU4" firstAttribute="top" secondItem="YCx-lA-dPZ" secondAttribute="top" id="woD-Hy-ziC"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="DEL-9i-Snl"/>
                     <connections>
                         <outlet property="nameLabel" destination="Czh-zC-8FH" id="2tT-BE-KZ5"/>
+                        <outlet property="webView" destination="fdp-3L-kU4" id="OYy-xj-DSX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qfc-7m-kSx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
