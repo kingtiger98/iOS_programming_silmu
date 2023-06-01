@@ -132,12 +132,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     
-    // 다음 뷰에 데이터 전달 _ 주석달기 공부 해야대
+    // 다음 뷰에 데이터 전달 기능
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // destination프로퍼티는 segue의 목적지에 접근할 수 있는 프로퍼티
+        // 우리가 접근하려는 movieName은 UIViewController의 자식인 DetailViewController의 프로퍼티이므로
+        // as!나 as?로 down casting해야 함, 부모 인스턴스를 자식 클래스로 변환하는 것!
         guard let dest = segue.destination as? DetailViewController else { return }
-        guard let selectRow = table.indexPathForSelectedRow else { return }
         
+        // 어떤 row를 눌렀는지 알기위해 indexPathForSelectedRow프로퍼티로 확인!
+        guard let selectRow = table.indexPathForSelectedRow else { return }
         let row = selectRow.row
+        
+        // movieName에 값 대입!
         dest.movieName = (movieData?.boxOfficeResult.dailyBoxOfficeList[row].movieNm)!
     }
     
