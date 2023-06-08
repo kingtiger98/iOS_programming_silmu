@@ -147,6 +147,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         dest.movieName = (movieData?.boxOfficeResult.dailyBoxOfficeList[row].movieNm)!
     }
     
+    
+    
 }
 
 // 네트워킹 함수 총 4단계
